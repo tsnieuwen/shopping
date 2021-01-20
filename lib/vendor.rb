@@ -21,6 +21,12 @@ class Vendor
     else
       @inventory[item] += quantity
     end
-  end 
+  end
+
+  def potential_revenue
+    @inventory.sum do |key, value|
+      key.price * value
+    end
+  end
 
 end
